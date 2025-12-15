@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Module.EditorExtension.Runtime.VisualDebugger.PhysicsCast;
 
+[DefaultExecutionOrder(-100)]
 public class CastVisualizer : MonoBehaviour
 {
     private static CastVisualizer _instance;
@@ -74,7 +75,7 @@ public class CastVisualizer : MonoBehaviour
         recordPool.Add(sphereRecord);
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         RayRecordPool.Clear();
         SphereRecordPool.Clear();

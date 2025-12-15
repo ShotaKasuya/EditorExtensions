@@ -7,7 +7,6 @@ namespace Module.EditorExtension.Editor.VisualDebugger.PhysicsCast;
 [InitializeOnLoad]
 public static class CastVisualizerCore
 {
-    // todo ゲームプレイ中のみ描画
     static CastVisualizerCore()
     {
         EditorApplication.playModeStateChanged -= OnPlayModeChanged;
