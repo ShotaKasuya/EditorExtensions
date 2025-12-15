@@ -1,5 +1,5 @@
 {
-    "name": "EditorExtension",
+    "name": "EditorExtension.Runtime",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],

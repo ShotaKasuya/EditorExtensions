@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Scripts.SphereVisualizer
   sphereDistance: 10
-  sphereRadius: 5
+  sphereRadius: 3
   sphereHit: 0
 --- !u!4 &336080787
 Transform:
