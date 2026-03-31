@@ -9,10 +9,10 @@ namespace Module.Option.Runtime
     {
         public OnceCell()
         {
-            _innerValue = Option<T>.None();
+            _innerValue = Optional<T>.None();
         }
 
-        private Option<T> _innerValue;
+        private Optional<T> _innerValue;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Init(T value)
@@ -22,7 +22,7 @@ namespace Module.Option.Runtime
                 throw new InvalidOperationException("OnceCell initialize called many");
             }
 
-            _innerValue = Option<T>.Some(value);
+            _innerValue = Optional<T>.Some(value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

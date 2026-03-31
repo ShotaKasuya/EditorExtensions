@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Module.Option.Editor
 {
-    [CustomPropertyDrawer(typeof(Option<>), true)]
+    [CustomPropertyDrawer(typeof(Optional<>), true)]
     public class OptionPropertyDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

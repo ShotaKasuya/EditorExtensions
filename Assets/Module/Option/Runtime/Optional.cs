@@ -7,18 +7,18 @@ using UnityEngine;
 namespace Module.Option.Runtime
 {
     [Serializable]
-    public struct Option<T>
+    public struct Optional<T>
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Option<T> Some(T value)
+        public static Optional<T> Some(T value)
         {
-            return new Option<T>(true, value);
+            return new Optional<T>(true, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Option<T> None()
+        public static Optional<T> None()
         {
-            return new Option<T>(false, default);
+            return new Optional<T>(false, default);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,9 +35,9 @@ namespace Module.Option.Runtime
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Option<TMap> Map<TMap>(Func<T, TMap> convert)
+        public Optional<TMap> Map<TMap>(Func<T, TMap> convert)
         {
-            return Option<TMap>.Some(convert(Unwrap()));
+            return Optional<TMap>.Some(convert(Unwrap()));
         }
 
         public bool IsSome => isSome;
@@ -46,7 +46,7 @@ namespace Module.Option.Runtime
         [SerializeField] private bool isSome;
         [SerializeField] private T? value;
 
-        private Option(bool isSome, T? value)
+        private Optional(bool isSome, T? value)
         {
             this.isSome = isSome;
             this.value = value;
@@ -62,11 +62,11 @@ namespace Module.Option.Runtime
             return "None";
         }
 
-        public static implicit operator OptionReader<T>(Option<T> value)
+        public static implicit operator OptionalReader<T>(Optional<T> value)
         {
             return value.IsSome
-                ? OptionReader<T>.Some(value.Unwrap())
-                : OptionReader<T>.None();
+                ? OptionalReader<T>.Some(value.Unwrap())
+                : OptionalReader<T>.None();
         }
     }
 }

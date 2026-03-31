@@ -3,18 +3,18 @@ using System.Runtime.CompilerServices;
 
 namespace Module.Option.Runtime
 {
-    public readonly struct OptionReader<T>
+    public readonly struct OptionalReader<T>
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static OptionReader<T> Some(T value)
+        public static OptionalReader<T> Some(T value)
         {
-            return new OptionReader<T>(true, value);
+            return new OptionalReader<T>(true, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static OptionReader<T> None()
+        public static OptionalReader<T> None()
         {
-            return new OptionReader<T>(false, default);
+            return new OptionalReader<T>(false, default);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,7 +36,7 @@ namespace Module.Option.Runtime
         private readonly bool _isSome;
         private readonly T? _value;
 
-        private OptionReader(bool isSome, T? value)
+        private OptionalReader(bool isSome, T? value)
         {
             _isSome = isSome;
             _value = value;
