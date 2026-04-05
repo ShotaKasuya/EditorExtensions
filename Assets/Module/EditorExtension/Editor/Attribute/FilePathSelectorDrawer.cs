@@ -1,16 +1,16 @@
 using System.IO;
+using Module.EditorExtension.Runtime.Attribute;
 using UnityEditor;
 using UnityEngine;
-using FilePathAttribute = Module.EditorExtension.Runtime.Attribute.FilePathAttribute;
 
-namespace Module.EditorExtension.Editor.PropertyDrawer
+namespace Module.EditorExtension.Editor.Attribute
 {
-    [CustomPropertyDrawer(typeof(FilePathAttribute))]
-    public class FilePathDrawer : UnityEditor.PropertyDrawer
+    [CustomPropertyDrawer(typeof(FilePathSelectorAttribute))]
+    public class FilePathSelectorDrawer : UnityEditor.PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            var attr = (FilePathAttribute)attribute;
+            var attr = (FilePathSelectorAttribute)attribute;
 
             // ラベル部分
             position = EditorGUI.PrefixLabel(position, label);

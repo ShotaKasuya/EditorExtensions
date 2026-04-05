@@ -2,10 +2,10 @@ using Module.EditorExtension.Runtime.Attribute;
 using UnityEditor;
 using UnityEngine;
 
-namespace Module.EditorExtension.Editor.PropertyDrawer
+namespace Module.EditorExtension.Editor.Attribute
 {
     [CustomPropertyDrawer(typeof(AutoAssignAttribute))]
-    public class AutoAssignDrawer: UnityEditor.PropertyDrawer
+    public class AutoAssignDrawer: PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
