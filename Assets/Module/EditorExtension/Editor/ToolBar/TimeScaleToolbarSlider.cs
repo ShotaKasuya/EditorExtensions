@@ -8,7 +8,7 @@ namespace Module.EditorExtension.Editor.ToolBar
     [UsedImplicitly]
     public class TimeScaleToolbarSlider
     {
-        private const string ID = "CustomUtility/TimeScaleSlider";
+        private const string ID = Constant.Path + "TimeScaleSlider";
         private const float MinTimeScale = 0f;
         private const float MaxTimeScale = 2f;
 

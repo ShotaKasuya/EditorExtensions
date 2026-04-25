@@ -11,12 +11,12 @@ namespace Module.EditorExtension.Editor.ToolBar
     [UsedImplicitly]
     public class SceneSelectToolbar
     {
-        private const string ElementPath = "CustomUtility/Scene Select";
+        private const string ID = Constant.Path + "Scene Select";
 
         private static string[] _scenePathList;
 
         [UsedImplicitly]
-        [MainToolbarElement(ElementPath, defaultDockPosition = MainToolbarDockPosition.Middle)]
+        [MainToolbarElement(ID, defaultDockPosition = MainToolbarDockPosition.Middle)]
         public static MainToolbarElement CreateSceneSelectDropdown()
         {
             string activeSceneName = Application.isPlaying switch
@@ -77,7 +77,7 @@ namespace Module.EditorExtension.Editor.ToolBar
 
         private static void SceneSwitched(Scene oldScene, Scene newScene)
         {
-            MainToolbar.Refresh(ElementPath);
+            MainToolbar.Refresh(ID);
         }
 
         static SceneSelectToolbar()
