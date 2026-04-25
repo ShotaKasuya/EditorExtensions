@@ -14,6 +14,7 @@ public class CastVisualizer : MonoBehaviour
     private const int PoolSize = 128;
     private List<RayRecord> RayRecordPool { get; } = new(PoolSize);
     private List<SphereRecord> SphereRecordPool { get; } = new(PoolSize);
+    private List<BoxRecord> BoxRecordPool { get; } = new(PoolSize);
 
     #endregion
 
@@ -64,6 +65,22 @@ public class CastVisualizer : MonoBehaviour
         recordPool.Add(sphereRecord);
     }
 
+    [UsedImplicitly]
+    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEVELOPMENT_BUILD")]
+    public static void StoreBox(Ray ray, float checkDistance, Vector3 halfExtents, Quaternion orientation, bool isHit)
+    {
+        var common = new CommonRecord(ray, checkDistance, isHit);
+        var boxRecord = new BoxRecord(halfExtents, orientation, common);
+        var recordPool = UseInstance().BoxRecordPool;
+
+        if (recordPool.Contains(boxRecord))
+        {
+            return;
+        }
+
+        recordPool.Add(boxRecord);
+    }
+
     #endregion
 
     #region ManageLifeTime
@@ -104,6 +121,11 @@ public class CastVisualizer : MonoBehaviour
             Draw(record);
         }
 
+        foreach (var record in instance.BoxRecordPool)
+        {
+            Draw(record);
+        }
+
         ClearRecord();
     }
 
@@ -111,6 +133,7 @@ public class CastVisualizer : MonoBehaviour
     {
         RayRecordPool.Clear();
         SphereRecordPool.Clear();
+        BoxRecordPool.Clear();
     }
 
     [UsedImplicitly]
@@ -160,6 +183,56 @@ public class CastVisualizer : MonoBehaviour
         Gizmos.DrawLine(start - right * radius, end - right * radius);
         Gizmos.DrawLine(start + up * radius, end + up * radius);
         Gizmos.DrawLine(start - up * radius, end - up * radius);
+    }
+
+    [UsedImplicitly]
+    internal static void Draw(in BoxRecord boxRecord)
+    {
+        var common = boxRecord.CommonRecord;
+
+        Gizmos.color = common.IsHit
+            ? new Color(1f, 0.4f, 0.4f)
+            : new Color(0.4f, 1f, 0.4f);
+
+        var start = common.Ray.origin;
+        var end = start + common.Ray.direction * common.CheckDistance;
+
+        var halfExtents = boxRecord.HalfExtents;
+        var orientation = boxRecord.Orientation;
+
+        // Draw start box
+        var oldMatrix = Gizmos.matrix;
+        Gizmos.matrix = Matrix4x4.TRS(start, orientation, Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, halfExtents * 2);
+
+        // Draw end box
+        Gizmos.matrix = Matrix4x4.TRS(end, orientation, Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, halfExtents * 2);
+
+        Gizmos.matrix = oldMatrix;
+
+        // Draw 4 lines connecting corners
+        var forward = orientation * Vector3.forward;
+        var right = orientation * Vector3.right;
+        var up = orientation * Vector3.up;
+
+        Vector3[] corners = {
+            right * halfExtents.x + up * halfExtents.y + forward * halfExtents.z,
+            right * halfExtents.x - up * halfExtents.y + forward * halfExtents.z,
+            -right * halfExtents.x + up * halfExtents.y + forward * halfExtents.z,
+            -right * halfExtents.x - up * halfExtents.y + forward * halfExtents.z,
+            right * halfExtents.x + up * halfExtents.y - forward * halfExtents.z,
+            right * halfExtents.x - up * halfExtents.y - forward * halfExtents.z,
+            -right * halfExtents.x + up * halfExtents.y - forward * halfExtents.z,
+            -right * halfExtents.x - up * halfExtents.y - forward * halfExtents.z
+        };
+
+        // This is a bit much for just connecting start/end, usually we just connect the corresponding corners
+        // For BoxCast, orientation doesn't change during sweep.
+        foreach (var corner in corners)
+        {
+            Gizmos.DrawLine(start + corner, end + corner);
+        }
     }
 
     #endregion

@@ -7,6 +7,12 @@ internal readonly record struct RayRecord(CommonRecord CommonRecord);
 
 internal readonly record struct SphereRecord(float Radius, CommonRecord CommonRecord);
 
+internal readonly record struct BoxRecord(Vector3 HalfExtents, Quaternion Orientation, CommonRecord CommonRecord);
+
+internal readonly record struct CircleRecord(float Radius, CommonRecord CommonRecord);
+
+internal readonly record struct CapsuleRecord2D(Vector2 Size, CapsuleDirection2D Direction, float Angle, CommonRecord CommonRecord);
+
 internal readonly struct CommonRecord : IEquatable<CommonRecord>
 {
     public Ray Ray { get; }
