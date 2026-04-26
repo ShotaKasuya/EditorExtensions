@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 498}
   m_MaxSize: {x: 10000, y: 10000}
@@ -846,12 +846,12 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 45766
-    - m_Data: 45768
-    - m_Data: 45770
-    - m_Data: 45772
-    - m_Data: 45774
-    - m_Data: 45776
+    - m_Data: 45788
+    - m_Data: 45790
+    - m_Data: 45792
+    - m_Data: 45794
+    - m_Data: 45796
+    - m_Data: 45798
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -884,12 +884,12 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 45766
-    - m_Data: 45768
-    - m_Data: 45770
-    - m_Data: 45772
-    - m_Data: 45774
-    - m_Data: 45776
+    - m_Data: 45788
+    - m_Data: 45790
+    - m_Data: 45792
+    - m_Data: 45794
+    - m_Data: 45796
+    - m_Data: 45798
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1759,9 +1759,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -1.1046658, y: 0.6886053, z: 0.34581852}
+    m_Target: {x: 2.574088, y: 3.6526327, z: 2.5655494}
     speed: 2
-    m_Value: {x: -1.1046658, y: 0.6886053, z: 0.34581852}
+    m_Value: {x: 2.574088, y: 3.6526327, z: 2.5655494}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1802,18 +1802,18 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.13428326, y: 0.7918384, z: -0.1880903, w: 0.56531745}
+    m_Target: {x: 0.103477836, y: 0.87202775, z: -0.2099039, w: 0.42989045}
     speed: 2
-    m_Value: {x: 0.13428326, y: 0.7918384, z: -0.1880903, w: 0.56531745}
+    m_Value: {x: 0.103477836, y: 0.8720277, z: -0.2099039, w: 0.42989042}
   m_Size:
-    m_Target: 10
+    m_Target: 3.7500021
     speed: 2
-    m_Value: 10
+    m_Value: 3.7500021
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1831,7 +1831,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: 0.08820639, y: 0.8999138, z: -0.21518868, w: 0.36887753}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
     m_SceneView: {fileID: 18}

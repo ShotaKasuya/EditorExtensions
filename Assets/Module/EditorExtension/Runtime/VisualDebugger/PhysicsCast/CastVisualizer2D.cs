@@ -29,6 +29,27 @@ public class CastVisualizer2D : MonoBehaviour
         return _instance;
     }
 
+    #region ManageLifeTime
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        _instance = null;
+    }
+
+    #endregion
+
     #region API
 
     [UsedImplicitly]
