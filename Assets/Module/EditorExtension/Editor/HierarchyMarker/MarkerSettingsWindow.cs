@@ -26,6 +26,7 @@ namespace Module.EditorExtension.Editor.HierarchyMarker
             if (GUILayout.Button("Apply"))
             {
                 SaveColor(_markerColor);
+                MarkerHighlighter.UpdateAllStyles();
                 EditorApplication.RepaintHierarchyWindow();
             }
 
@@ -33,6 +34,7 @@ namespace Module.EditorExtension.Editor.HierarchyMarker
             {
                 _markerColor = new Color(1f, 0.9f, 0.4f, 0.3f); // デフォルト色
                 SaveColor(_markerColor);
+                MarkerHighlighter.UpdateAllStyles();
                 EditorApplication.RepaintHierarchyWindow();
             }
         }

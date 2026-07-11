@@ -32,7 +32,7 @@ namespace Module.EditorExtension.Editor.Attribute
         {
             var hasError = false;
 
-            var behaviours = Object.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
+            var behaviours = Object.FindObjectsByType<MonoBehaviour>();
 
             foreach (var monoBehaviour in behaviours)
             {

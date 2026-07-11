@@ -30,7 +30,7 @@ namespace Module.EditorExtension.Editor.HierarchyMarker
 
         private static void OnHierarchyChanged()
         {
-            var allObjects = Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+            var allObjects = Object.FindObjectsByType<GameObject>();
 
             foreach (var gameObject in allObjects)
             {
