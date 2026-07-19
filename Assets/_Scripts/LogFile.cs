@@ -5,7 +5,7 @@ namespace _Scripts
 {
     public class LogFile:MonoBehaviour
     {
-        [SerializeField, FolderPathSelector] private string folder;
+        [SerializeField, FolderPathSelector] private string? folder;
 
         private void Start()
         {

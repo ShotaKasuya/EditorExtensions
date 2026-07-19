@@ -21,7 +21,7 @@ public class CastVisualizer2D : MonoBehaviour
     private static CastVisualizer2D UseInstance()
     {
         if (_instance is not null) return _instance;
-        _instance = FindFirstObjectByType<CastVisualizer2D>();
+        _instance = FindAnyObjectByType<CastVisualizer2D>();
         if (_instance is not null) return _instance;
 
         var go = new GameObject(nameof(CastVisualizer2D));
@@ -53,7 +53,7 @@ public class CastVisualizer2D : MonoBehaviour
     #region API
 
     [UsedImplicitly]
-    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEVELOPMENT_BUILD")]
+    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEBUG")]
     public static void StoreRay(Vector2 origin, Vector2 direction, float distance, bool isHit)
     {
         var common = new CommonRecord(new Ray(origin, direction), distance, isHit);
@@ -63,7 +63,7 @@ public class CastVisualizer2D : MonoBehaviour
     }
 
     [UsedImplicitly]
-    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEVELOPMENT_BUILD")]
+    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEBUG")]
     public static void StoreCircle(Vector2 origin, float radius, Vector2 direction, float distance, bool isHit)
     {
         var common = new CommonRecord(new Ray(origin, direction), distance, isHit);
@@ -73,7 +73,7 @@ public class CastVisualizer2D : MonoBehaviour
     }
 
     [UsedImplicitly]
-    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEVELOPMENT_BUILD")]
+    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEBUG")]
     public static void StoreBox(Vector2 origin, Vector2 size, float angle, Vector2 direction, float distance, bool isHit)
     {
         var common = new CommonRecord(new Ray(origin, direction), distance, isHit);
@@ -83,7 +83,7 @@ public class CastVisualizer2D : MonoBehaviour
     }
 
     [UsedImplicitly]
-    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEVELOPMENT_BUILD")]
+    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEBUG")]
     public static void StoreCapsule(Vector2 origin, Vector2 size, CapsuleDirection2D capsuleDirection, float angle, Vector2 direction, float distance, bool isHit)
     {
         var common = new CommonRecord(new Ray(origin, direction), distance, isHit);

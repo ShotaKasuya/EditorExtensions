@@ -22,7 +22,7 @@ public class CastVisualizer : MonoBehaviour
     {
         if (_instance is not null) return _instance;
 
-        _instance = FindFirstObjectByType<CastVisualizer>();
+        _instance = FindAnyObjectByType<CastVisualizer>();
 
         if (_instance is not null) return _instance;
 
@@ -34,7 +34,7 @@ public class CastVisualizer : MonoBehaviour
     #region API
 
     [UsedImplicitly]
-    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEVELOPMENT_BUILD")]
+    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEBUG")]
     public static void StoreRay(Ray ray, float checkDistance, bool isHit)
     {
         var common = new CommonRecord(ray, checkDistance, isHit);
@@ -50,7 +50,7 @@ public class CastVisualizer : MonoBehaviour
     }
 
     [UsedImplicitly]
-    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEVELOPMENT_BUILD")]
+    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEBUG")]
     public static void StoreSphere(Ray ray, float checkDistance, float radius, bool isHit)
     {
         var common = new CommonRecord(ray, checkDistance, isHit);
@@ -66,7 +66,7 @@ public class CastVisualizer : MonoBehaviour
     }
 
     [UsedImplicitly]
-    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEVELOPMENT_BUILD")]
+    [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEBUG")]
     public static void StoreBox(Ray ray, float checkDistance, Vector3 halfExtents, Quaternion orientation, bool isHit)
     {
         var common = new CommonRecord(ray, checkDistance, isHit);

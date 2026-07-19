@@ -9,7 +9,7 @@ namespace _Scripts
     {
         [Header("Sphere")]
 
-        private Transform _selfTransform;
+        private Transform? _selfTransform;
         [SerializeField] private float sphereDistance;
         [SerializeField] private float sphereRadius;
         [SerializeField] private bool sphereHit;
@@ -23,7 +23,7 @@ namespace _Scripts
         {
             DebugLogger.Log("update thread", Thread.CurrentThread.ManagedThreadId.ToString());
             CastVisualizer.StoreSphere(
-                new Ray(_selfTransform.position, Vector3.forward), sphereDistance, sphereRadius, sphereHit
+                new Ray(_selfTransform!.position, Vector3.forward), sphereDistance, sphereRadius, sphereHit
             );
         }
     }

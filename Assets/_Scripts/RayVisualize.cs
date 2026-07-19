@@ -7,7 +7,7 @@ namespace _Scripts
     {
         [Header("Ray")]
 
-        private Transform _selfTransform;
+        private Transform? _selfTransform;
 
         [SerializeField] private float rayDistance;
         [SerializeField] private bool rayHit;
@@ -20,7 +20,7 @@ namespace _Scripts
         private void Update()
         {
             CastVisualizer.StoreRay(
-                new Ray(_selfTransform.position, Vector3.forward), rayDistance, rayHit
+                new Ray(_selfTransform!.position, Vector3.forward), rayDistance, rayHit
             );
         }
     }

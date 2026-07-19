@@ -10,7 +10,7 @@ namespace Module.EditorExtension.Runtime.VisualDebugger
         /// </summary>
         /// <param name="key">The label for the value.</param>
         /// <param name="value">The value to display.</param>
-        [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEVELOPMENT_BUILD")]
+        [System.Diagnostics.Conditional("UNITY_EDITOR"), System.Diagnostics.Conditional("DEBUG")]
         public static void Log(string key, string value)
         {
             if (!Application.isPlaying) return;

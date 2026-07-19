@@ -7,8 +7,8 @@ namespace _Scripts
     [RequireComponent(typeof(CircleCollider2D))]
     public class CircleVisualizer : MonoBehaviour
     {
-        private Rigidbody2D _selfRigidbody;
-        private Collider2D _selfCollider;
+        private Rigidbody2D? _selfRigidbody;
+        private Collider2D? _selfCollider;
         private readonly RaycastHit2D[] _hitBuffer = new RaycastHit2D[8];
 
         [SerializeField] private float rayDistance;

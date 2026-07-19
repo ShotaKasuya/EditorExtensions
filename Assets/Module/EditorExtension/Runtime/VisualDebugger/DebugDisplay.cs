@@ -13,7 +13,7 @@ namespace Module.EditorExtension.Runtime.VisualDebugger
             {
                 if (_instance == null)
                 {
-                    _instance = FindFirstObjectByType<DebugDisplay>();
+                    _instance = FindAnyObjectByType<DebugDisplay>();
                     if (_instance == null)
                     {
                         var go = new GameObject("DebugDisplay");
@@ -61,14 +61,7 @@ namespace Module.EditorExtension.Runtime.VisualDebugger
 
         public void UpdateLog(string key, string value)
         {
-            if (_logs.ContainsKey(key))
-            {
-                _logs[key] = value;
-            }
-            else
-            {
-                _logs.Add(key, value);
-            }
+            _logs[key] = value;
         }
 
         private void OnGUI()

@@ -1,0 +1,18 @@
+{
+    "name": "MapGenerator.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a66f542023a5fef4cb9d939599d720d1"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

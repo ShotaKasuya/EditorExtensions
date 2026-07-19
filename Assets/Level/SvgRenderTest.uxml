@@ -1,0 +1,3 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Image source="project://database/Assets/Diagram.svg?fileID=7388822144124034973&amp;guid=48ed4948b9874219b643a3b1270dd6fb&amp;type=3#Diagram" name="Image" style="height: 1170px;"/>
+</ui:UXML>
