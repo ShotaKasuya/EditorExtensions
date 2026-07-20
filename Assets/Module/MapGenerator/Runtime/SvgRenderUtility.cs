@@ -12,7 +12,7 @@ namespace Module.MapGenerator.Runtime
             image.vectorImage = CreateVectorImage(document.ToString());
         }
 
-        private static VectorImage CreateVectorImage(string svgText)
+        public static VectorImage CreateVectorImage(string svgText)
         {
             using var reader = new StringReader(svgText);
             var sceneInfo = SVGParser.ImportSVG(reader);

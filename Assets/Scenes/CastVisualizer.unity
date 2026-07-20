@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d8d7a1149041dcb1f96f6cb6e4b453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Scripts.MapGenerator
-  roomCount: 3
+  roomCount: 7
 --- !u!1 &1703916545
 GameObject:
   m_ObjectHideFlags: 0

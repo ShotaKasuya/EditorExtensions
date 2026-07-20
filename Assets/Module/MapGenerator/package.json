@@ -1,0 +1,9 @@
+﻿{
+  "name": "com.kasuya.map_generator",
+  "version": "v0.1.0",
+  "displayName": "MapGenerator",
+  "description": "my map generator",
+  "gitDependencies": {
+    "com.kasuya.svg_utility": "https://github.com/ShotaKasuya/EditorExtensions.git?path=Assets/Module/SvgUtility"
+  }
+}
