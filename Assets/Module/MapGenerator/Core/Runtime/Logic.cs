@@ -2,7 +2,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Module.MapGenerator.Runtime;
+namespace Module.MapGenerator.Core.Runtime;
 
 public static class Logic
 {

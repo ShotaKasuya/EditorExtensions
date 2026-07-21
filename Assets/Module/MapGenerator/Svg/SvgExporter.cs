@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Module.MapGenerator.Core.Runtime;
 using Module.SvgUtility;
 using UnityEngine;
 
-namespace Module.MapGenerator.Runtime;
+namespace Module.MapGenerator.Svg;
 
 public static class MapSvgExporter
 {

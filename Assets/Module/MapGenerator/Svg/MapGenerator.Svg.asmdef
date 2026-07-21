@@ -1,13 +1,11 @@
 {
-    "name": "MapGenerator.Editor",
+    "name": "MapGenerator.Svg",
     "rootNamespace": "",
     "references": [
         "GUID:a66f542023a5fef4cb9d939599d720d1",
         "GUID:bfbebba2f9a5a904cb474c80dfa6a063"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

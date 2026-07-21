@@ -1,9 +1,7 @@
 {
     "name": "MapGenerator.Runtime",
     "rootNamespace": "",
-    "references": [
-        "GUID:bfbebba2f9a5a904cb474c80dfa6a063"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

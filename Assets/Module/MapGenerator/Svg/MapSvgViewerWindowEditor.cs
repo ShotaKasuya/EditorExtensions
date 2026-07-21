@@ -1,9 +1,10 @@
-﻿using Module.MapGenerator.Runtime;
+﻿using Module.MapGenerator.Core.Runtime;
+using Module.SvgUtility;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Module.MapGenerator.Editor;
+namespace Module.MapGenerator.Svg;
 
 public class MapSvgViewerWindowEditor : EditorWindow
 {
@@ -125,7 +126,7 @@ public class MapSvgViewerWindowEditor : EditorWindow
         // 2. Export to SVG string
         var svgDocument = MapSvgExporter.Export(generatedMap);
         var svgString = svgDocument.ToString();
-        var svgImage = SvgRenderUtility.CreateVectorImage(svgString);
+        var svgImage = SvgStyleExtension.CreateVectorImage(svgString);
         svgDisplayElement!.style.backgroundImage = new StyleBackground(svgImage);
         statusLabel.text = $"Successfully generated and rendered SVG with {roomCount} rooms.";
         statusLabel.style.color = new StyleColor(Color.green);

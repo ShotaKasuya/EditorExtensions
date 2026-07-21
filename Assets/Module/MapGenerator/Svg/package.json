@@ -1,0 +1,6 @@
+﻿{
+  "name": "com.kasuya.map_generator.svg",
+  "version": "v0.1.0",
+  "displayName": "MapGenerator SVG Extension",
+  "description": "my map generator extension for svg"
+}

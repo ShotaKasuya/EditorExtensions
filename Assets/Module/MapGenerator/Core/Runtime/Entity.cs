@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Module.MapGenerator.Runtime;
+namespace Module.MapGenerator.Core.Runtime;
 
 public enum ConnectVecType
 {
