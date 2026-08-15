@@ -1,0 +1,10 @@
+.LabelButton {
+    -unity-font-style: bold;
+    color: rgb(255, 255, 255);
+    -unity-text-align: upper-center;
+    border-radius: 10px;
+}
+
+.NormalButton {
+    background-color: rgb(128, 128, 128);
+}

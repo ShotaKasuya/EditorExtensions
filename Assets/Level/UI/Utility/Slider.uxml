@@ -1,0 +1,5 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Level/UI/Utility/USS_Progress.uss?fileID=7433441132597879392&amp;guid=a340fb6b8919ff243827e2ee24e0bd1c&amp;type=3#USS_Progress"/>
+    <ui:ProgressBar value="7.1" title="my-progress"/>
+    <ui:Label text="Normal Button" class="LabelButton NormalButton"/>
+</ui:UXML>
