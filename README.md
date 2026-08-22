@@ -10,6 +10,5 @@
   `https://github.com/ShotaKasuya/EditorExtensions.git?path=Assets/Module/MapGenerator/Svg`
 * SVG生成パッケージ
   `https://github.com/ShotaKasuya/EditorExtensions.git?path=Assets/Module/SvgUtility`
-
-
-
+* サービスロケータパッケージ
+  `https://github.com/ShotaKasuya/EditorExtensions.git?path=Assets/Module/UnityServiceLocator`
