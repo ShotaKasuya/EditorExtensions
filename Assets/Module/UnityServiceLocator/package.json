@@ -1,6 +1,6 @@
 ﻿{
   "name": "com.kasuya.unity_service_locator",
-  "version": "v0.1.0",
+  "version": "v0.1.1",
   "displayName": "ServiceLocator",
   "description": "my service locator"
 }
