@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+
 
 namespace Module.MapGenerator.Core.Runtime;
 
@@ -84,6 +85,60 @@ public class Map
                     unusedConnectorList[i].Parent.Use(unusedConnectorList[i]);
                 }
             }
+        }
+    }
+
+    /// <summary>
+    /// Enumerates all connected room pairs in the map.
+    /// Returns each connection as a tuple of (Room A, its connector, Room B, its connector).
+    /// Each connection appears only once.
+    /// </summary>
+    public IEnumerable<(Room roomA, RoomConnector connectorA, Room roomB, RoomConnector connectorB)> GetAllConnections()
+    {
+        var visited = new HashSet<(RoomConnector, RoomConnector)>(new ConnectorPairComparer());
+        foreach (var room in RoomList)
+        {
+            foreach (var connector in room.ConnectorList)
+            {
+                if (connector.ConnectionState != ConnectionStateType.Connected) continue;
+                // Find the matching connector in other rooms
+                foreach (var otherRoom in RoomList)
+                {
+                    foreach (var otherConnector in otherRoom.ConnectorList)
+                    {
+                        if (connector == otherConnector) continue;
+                        if (otherConnector.ConnectionState != ConnectionStateType.Connected) continue;
+
+                        if (IsPair(connector, otherConnector))
+                        {
+                            var pair = (connector, otherConnector);
+                            if (!visited.Contains(pair))
+                            {
+                                visited.Add(pair);
+                                yield return (connector.Parent, connector, otherConnector.Parent, otherConnector);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Comparer to treat connector pairs as unordered
+    private class ConnectorPairComparer : IEqualityComparer<(RoomConnector, RoomConnector)>
+    {
+        public bool Equals((RoomConnector, RoomConnector) x, (RoomConnector, RoomConnector) y)
+        {
+            return (x.Item1 == y.Item1 && x.Item2 == y.Item2) ||
+                   (x.Item1 == y.Item2 && x.Item2 == y.Item1);
+        }
+
+        public int GetHashCode((RoomConnector, RoomConnector) obj)
+        {
+            // Order-independent hash code
+            int h1 = obj.Item1.GetHashCode();
+            int h2 = obj.Item2.GetHashCode();
+            return h1 ^ h2;
         }
     }
 
